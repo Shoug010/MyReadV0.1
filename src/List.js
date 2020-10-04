@@ -36,6 +36,10 @@ class List extends React.Component{
   }
  
 }
+List.propTypes = {
+  books: PropTypes.object.isRequired,
+  Update: PropTypes.func.isRequired,
+};
 
 
 export default List;
