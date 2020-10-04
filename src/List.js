@@ -16,8 +16,7 @@ class List extends React.Component{
               <select defaultValue={books.shelf} onChange={
                 (event)=>{
                   console.log(event.target.value); 
-                  BooksAPI.update(books,event.target.value).then;
-                  Update();
+                  BooksAPI.update(books,event.target.value).then(Update)
                   console.log("updated");
                 }
               }>
