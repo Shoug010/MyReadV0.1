@@ -41,8 +41,8 @@ The right side you can see the plus button, it can move us to the next page the 
 
 ### Search page: 
 In this page, you can search for a new book and add them to your book
- 
 
+![alt text](https://github.com/Shoug010/MyReadV0.1/blob/main/Search.png)
 
 
 
