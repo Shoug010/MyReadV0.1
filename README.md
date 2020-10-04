@@ -12,7 +12,7 @@ So, if you have not set up them yet make sure to do before starting
 
 First: clone the App, you can do it with command line 
 
-git clone https://github.com/Shoug010/MyReadV0.1
+git clone https://github.com/Shoug010/MyReadV0.1.git
 
 Or download zip 
 
