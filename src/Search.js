@@ -1,5 +1,4 @@
 import React from 'react';
-//mport PropTypes from 'prop-types';
 import './App.css'
 import * as BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
@@ -7,15 +6,15 @@ import { Link } from 'react-router-dom'
 
 class Search extends React.Component{
 
-  state = {
+  state = {  /* books for the search result, empty for user input, AllBook for all the books  */
       books:[],
       empty: " ",
       AllBook:[]
   };
-  componentDidMount(){
+  componentDidMount(){  /*componentDidMount is for All Book to get the shelf status for the search books   */
     BooksAPI.getAll().then((AllBook)=>this.setState(()=>({AllBook })))
   }
-  search(key){
+  search(key){   /*Search is to get the input from the user and search for it, Also to update the status for 'empty' to know if the user deletes the input    */
     this.setState({empty: key})
     if (key !== "") {
       BooksAPI.search(key).then((books)=>this.setState(()=>({books})));
@@ -36,46 +35,45 @@ class Search extends React.Component{
           type="text" placeholder="Search by title or author"/>
           </div>
         </div>
-        <div className="bookshelf">
+        <div className="bookshelf"> <br></br> <br></br>
           <div className="bookshelf-books">
-            <ol className="books-grid">
-              {this.state.empty !== "" ? 
-                (<div> {this.state.books.map(b=> { 
-                  var shelf ="none"
-                  this.state.AllBook.map(a=>{
-                    if (b.id == a.id) {
-                    shelf = a.shelf
-                    }
-                  })
-                  return(
-                    <li key={b.id}>
-                      <div className="book"> 
-                        <div className="book-top">
-                          <div className="book-cover" > <img alt="" src={b.imageLinks.smallThumbnail} style={{ width: 128, height: 193,}}/></div>
-                            <div className="book-shelf-changer">
-                              <select defaultValue={shelf} onChange={
-                                (event)=>{
-                                  BooksAPI.update(b,event.target.value).then;
-                                  BooksAPI.getAll().then((AllBook)=>this.setState(()=>({ AllBook})))
-                                }
-                              }> 
-                                <option value="move" disabled > Move to...</option>
-                                <option value="currentlyReading" >Currently Reading</option>
-                                <option value="wantToRead">Want to Read</option>
-                                <option value="read">Read</option>
-                                <option value="none">None</option>
-                              </select>
-                            </div>
-                        </div>
-                        <div className="book-title">{b.title}</div>
-                        <div className="book-authors">{b.id}</div>
+            {this.state.empty !== "" ? 
+              (<ol className="books-grid"> {this.state.books.map(b=> { 
+                var shelf ="none"
+                this.state.AllBook.map(a=>{
+                  if (b.id == a.id) {
+                  shelf = a.shelf
+                  }
+                })
+                return(
+                  <li key={b.id}>
+                    <div className="book"> 
+                      <div className="book-top">
+                        <div className="book-cover" > <img alt="" src={b.imageLinks.smallThumbnail} style={{ width: 128, height: 193,}}/></div>
+                          <div className="book-shelf-changer">
+                            <select defaultValue={shelf} onChange={
+                              (event)=>{
+                                BooksAPI.update(b,event.target.value).then;
+                                BooksAPI.getAll().then((AllBook)=>this.setState(()=>({ AllBook})))
+                                /* Update the Book and set the state */
+                              }
+                            }> 
+                              <option value="move" disabled > Move to...</option>
+                              <option value="currentlyReading" >Currently Reading</option>
+                              <option value="wantToRead">Want to Read</option>
+                              <option value="read">Read</option>
+                              <option value="none">None</option>
+                            </select>
+                          </div>
                       </div>
-                    </li>
-                  )
-                })}
-                </div>) : (<div></div>)
+                      <div className="book-title">{b.title}</div>
+                      <div className="book-authors">{b.authors}</div>
+                    </div>
+                  </li>
+                )
+              })}
+              </ol>) : (<div></div>)
               }
-            </ol>
           </div>
         </div>
       </div>

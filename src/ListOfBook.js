@@ -1,5 +1,4 @@
 import React , {Component} from 'react';
-//mport PropTypes from 'prop-types';
 import './App.css'
 import * as BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
@@ -26,7 +25,6 @@ class ListOfBook extends Component{
           <h1>MyReads</h1>
         </div>
         <div className="list-books-content">      
-          <div className="list-books-content">
             <div className="bookshelf">
               <h2 className="bookshelf-title">Currently Reading</h2> 
                  <ol className="books-grid">
@@ -61,7 +59,6 @@ class ListOfBook extends Component{
                 </ol>
               </div>
             </div>
-          </div>
         </div>
         <div className="open-search">
           <Link to='/Search'>Search</Link>

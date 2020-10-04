@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import './App.css'
 import * as BooksAPI from './BooksAPI'
 
-class List extends React.Component{
+class List extends Component{
   render (){
-    const { books, Update } = this.props
+    const { books, Update } = this.props /* save the prop that we get from ListBook  */
       return (
       <li key={books.id}> 
         <div className="book">
@@ -26,7 +26,7 @@ class List extends React.Component{
             </div>
           </div>
         <div className="book-title">{books.title}</div>
-        <div className="book-authors">{books.shelf}</div>
+        <div className="book-authors">{books.authors}</div>
         </div>
       </li>
     )
