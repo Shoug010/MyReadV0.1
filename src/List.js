@@ -5,7 +5,6 @@ import * as BooksAPI from './BooksAPI'
 
 class List extends React.Component{
   render (){
-    console.log("list call");
     const { books, Update } = this.props
       return (
       <li key={books.id}> 
@@ -15,9 +14,7 @@ class List extends React.Component{
             <div className="book-shelf-changer">
               <select defaultValue={books.shelf} onChange={
                 (event)=>{
-                  console.log(event.target.value); 
                   BooksAPI.update(books,event.target.value).then(Update)
-                  console.log("updated");
                 }
               }>
                 <option value="move" disabled > Move to...</option>

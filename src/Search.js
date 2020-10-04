@@ -13,20 +13,15 @@ class Search extends React.Component{
       AllBook:[]
   };
   componentDidMount(){
-    console.log("call");
     BooksAPI.getAll().then((AllBook)=>this.setState(()=>({AllBook })))
   }
   search(key){
     this.setState({empty: key})
-    console.log("searchfun");
-    console.log(key);
     if (key !== "") {
-      console.log("ifpass");
       BooksAPI.search(key).then((books)=>this.setState(()=>({books})));
     }
   }
   render(){
-    console.log("renderSearch");
     return(
       <div className="search-books">
         <div className="search-books-bar">
@@ -49,7 +44,6 @@ class Search extends React.Component{
                   var shelf ="none"
                   this.state.AllBook.map(a=>{
                     if (b.id == a.id) {
-                    console.log(b.title)
                     shelf = a.shelf
                     }
                   })
@@ -61,8 +55,6 @@ class Search extends React.Component{
                             <div className="book-shelf-changer">
                               <select defaultValue={shelf} onChange={
                                 (event)=>{
-                                  console.log(b.shelf);
-                                  console.log(event.target.value); 
                                   BooksAPI.update(b,event.target.value).then;
                                   BooksAPI.getAll().then((AllBook)=>this.setState(()=>({ AllBook})))
                                 }

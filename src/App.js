@@ -9,7 +9,6 @@ import { Route } from 'react-router-dom'
 class BooksApp extends React.Component {
   
   render() {
-    console.log("renderApp");
     return (
       <div className="app">
         <Route  path='/Search'  component={Search} />

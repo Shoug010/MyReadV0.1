@@ -12,12 +12,10 @@ class ListOfBook extends Component{
   };
 
   componentDidMount(){
-    console.log("call the com list");
     BooksAPI.getAll().then((books)=>this.setState(()=>({books})))
   }
 
   render (){
-    console.log("render listofbook");
     const currentlyReading= this.state.books.filter(b=>b.shelf==='currentlyReading');
     const wantToRead= this.state.books.filter(b=>b.shelf==='wantToRead');
     const read= this.state.books.filter(b=>b.shelf==='read');
