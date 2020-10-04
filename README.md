@@ -1,4 +1,4 @@
-### MyRead 
+# MyRead 
 
 ## Project Overview:
 
@@ -16,7 +16,7 @@ git clone https://github.com/Shoug010/MyReadV0.1.git
 
 Or download zip 
 
-Second: in the command line open the app file and Install the npm 
+* Second: in the command line open the app file and Install the npm 
 npm install
 
 when you finish you can start the App by typing? 
@@ -28,7 +28,7 @@ Then the browser will open the App for you
 ## How to Use the App:
 In MyRead App we have two pages 
 
-List of Book page: 
+### List of Book page: 
 In this page, we list your book base on the bookshelf (Currently Reading, Want to Read, Read ) 
 
 In each Book, you have a dropdown list for the shelf you can change the bookshelf easily
@@ -37,7 +37,7 @@ In each Book, you have a dropdown list for the shelf you can change the bookshel
 
 The right side you can see the plus button, it can move us to the next page the search page,
 
-Search page: 
+### Search page: 
 In this page, you can search for a new book and add them to your book
  
 
