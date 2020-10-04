@@ -10,17 +10,17 @@ The MyRead is an app to help you categorize your books also to search for a new 
 The project uses Node.js and the Create-React-App starter,
 So, if you have not set up them yet make sure to do before starting 
 
-* First: clone the App, you can do it with command line 
+### First: clone the App, you can do it with command line 
 
-git clone https://github.com/Shoug010/MyReadV0.1.git
+$ git clone https://github.com/Shoug010/MyReadV0.1.git
 
-Or download zip 
+   Or download zip 
 
-* Second: in the command line open the app file and Install the npm 
-npm install
+### Second: in the command line open the app file and Install the npm 
+$ npm install
 
 when you finish you can start the App by typing? 
-npm start
+$ npm start
 
 Then the browser will open the App for you
  
