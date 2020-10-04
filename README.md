@@ -1,11 +1,11 @@
-MyRead 
+##MyRead 
 
-Project Overview:
+#Project Overview:
 
 This project is for the Udacity React Nanodegree Program, the purpose of it is to help us understand the basic structure of reacting, 
 The MyRead is an app to help you categorize your books also to search for a new one,
 
-How to get started:
+#How to get started:
 
 The project uses Node.js and the Create-React-App starter,
 So, if you have not set up them yet make sure to do before starting 
@@ -25,7 +25,7 @@ npm start
 Then the browser will open the App for you
  
 
-How to Use the App:
+#How to Use the App:
 In MyRead App we have two pages 
 
 List of Book page: 
