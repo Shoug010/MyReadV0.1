@@ -26,7 +26,7 @@ $ npm start
 ```
 Then the browser will open the App for you
  
- ![alt text](https://github.com/Shoug010/MyReadV0.1/blob/main/MyRead.png)
+ ![alt text](https://github.com/Shoug010/MyReadV0.1/blob/main/MyApp.png)
 
 ## How to Use the App:
 In MyRead App we have two pages 
@@ -36,7 +36,7 @@ In this page, we list your book base on the bookshelf (Currently Reading, Want t
 
 In each Book, you have a dropdown list for the shelf you can change the bookshelf easily
 
- ![alt text](https://github.com/Shoug010/MyReadV0.1/blob/main/ListBook.png)
+ ![alt text](https://github.com/Shoug010/MyReadV0.1/blob/main/List Book.png)
 
 The right side you can see the plus button, it can move us to the next page the search page,
 
