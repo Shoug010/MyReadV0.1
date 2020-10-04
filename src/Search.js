@@ -17,7 +17,13 @@ class Search extends React.Component{
   search(key){   /*Search is to get the input from the user and search for it, Also to update the status for 'empty' to know if the user deletes the input    */
     this.setState({empty: key})
     if (key !== "") {
-      BooksAPI.search(key).then((books)=>this.setState(()=>({books})));
+      BooksAPI.search(key).then((book)=>{
+        if (book.length >0) {
+          this.setState({ books: book})
+        }else{
+          this.setState({books:[]})
+        }
+      })
     }
   }
   render(){
@@ -37,23 +43,24 @@ class Search extends React.Component{
         </div>
         <div className="bookshelf"> <br></br> <br></br>
           <div className="bookshelf-books">
-            {this.state.empty !== "" ? 
+            {this.state.empty !== "" ?
               (<ol className="books-grid"> {this.state.books.map(b=> { 
                 var shelf ="none"
                 this.state.AllBook.map(a=>{
-                  if (b.id == a.id) {
-                  shelf = a.shelf
+                  if (b.id === a.id) {
+                   return shelf = a.shelf
                   }
+                   return null
                 })
+
                 return(
                   <li key={b.id}>
                     <div className="book"> 
                       <div className="book-top">
-                        <div className="book-cover" > <img alt="" src={b.imageLinks.smallThumbnail} style={{ width: 128, height: 193,}}/></div>
+                        <div className="book-cover" > <img alt="" src={b.imageLinks?(b.imageLinks.smallThumbnail):('')} style={{ width: 128, height: 193,}}/></div>
                           <div className="book-shelf-changer">
-                            <select defaultValue={shelf} onChange={
-                              (event)=>{
-                                BooksAPI.update(b,event.target.value).then;
+                            <select defaultValue={shelf} onChange={(event)=>{
+                                BooksAPI.update(b,event.target.value).then();
                                 BooksAPI.getAll().then((AllBook)=>this.setState(()=>({ AllBook})))
                                 /* Update the Book and set the state */
                               }
