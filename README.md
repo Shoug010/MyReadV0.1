@@ -14,13 +14,12 @@ So, if you have not set up them yet make sure to do before starting
 ```
 $ git clone https://github.com/Shoug010/MyReadV0.1.git
 ```
-   Or download zip 
 
 ### Second: in the command line open the app file and Install the npm 
 ```
 $ npm install
 ```
-when you finish you can start the App by typing? 
+when you finish you can start the App by typing
 ```
 $ npm start
 ```
